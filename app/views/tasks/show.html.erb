@@ -1,27 +1,32 @@
-<p id="notice"><%= notice %></p>
+<% title "Task Details" %>
 
-<p>
-  <b>Name:</b>
-  <%= @task.name %>
-</p>
+<div class="ui-body ui-body-c">
 
-<p>
-  <b>Text:</b>
-  <%= @task.text %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Comment:</b>
-  <%= @task.comment %>
-</p>
+  <p>
+    <b>Name:</b>
+    <%= @task.name %>
+  </p>
 
+  <p>
+    <b>Text:</b>
+    <%= @task.text %>
+  </p>
 
-<h2>Tasks</h2>
-<%= render @task.subtasks %>
-
-<h2>Tasks</h2>
-<%= render "subtasks/form" %>
+  <p>
+    <b>Comment:</b>
+    <%= @task.comment %>
+  </p>
 
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+  <div class="ui-bar ui-bar-b"> 
+    <h3>Sub-Tasks</h3>
+  </div>
+    <%= render @task.subtasks %>
+
+    <%= render "subtasks/form" %>
+
+  <%= link_to 'Edit', edit_task_path(@task) %>
+
+</div>

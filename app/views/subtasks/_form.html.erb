@@ -1,26 +1,28 @@
-<h2>Add a subtask:</h2>
-<%= form_for([@task, @task.subtasks.build]) do |f| %>
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :text %><br />
-      <%= f.text_area :text %>
-    </div>
-    <div class="field">
-      <%= f.label :status %><br />
-      <%= f.text_field :status %>
-    </div>
-    <div class="field">
-      <%= f.label :time %><br />
-      <%= f.text_field :time %>
-    </div>
-    <div class="field">
-      <%= f.label :type %><br />
-      <%= f.text_field :type %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
+<div data-role="collapsible">
+  <h3>Add a subtask:</h3>
+  <%= form_for([@task, @task.subtasks.build]) do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :text %>
+        <%= f.text_area :text %>
+      </div>
+      <div class="field">
+        <%= f.label :status %>
+        <%= f.text_field :status %>
+      </div>
+      <div class="field">
+        <%= f.label :time %>
+        <%= f.text_field :time %>
+      </div>
+      <div class="field">
+        <%= f.label :type %>
+        <%= f.text_field :type %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+  <% end %>
+</div>

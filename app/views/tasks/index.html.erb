@@ -1,27 +1,24 @@
-<h1>Listing tasks</h1>
+<% title "Manage Tasks" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Text</th>
-    <th>Comment</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+		<div class="ui-body ui-body-a">
 
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.name %></td>
-    <td><%= task.text %></td>
-    <td><%= task.comment %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  		<ul data-role="listview" data-inset="true">
 
-<br />
+      <% @tasks.each do |task| %>
+        <li>
+          <h3><%= task.name %></h3>
+          <p><%= task.text %></p>
+          <p><%= task.comment %></p>
+          <div data-role="controlgroup" data-type="horizontal">
+            <%= link_to 'Show', task, "data-role" => "button", "data-icon" => "search", "data-theme" => "b" %>
+            <%= link_to 'Edit', edit_task_path(task), "data-role" => "button", "data-icon" => "gear", "data-theme" => "b" %>
+            <%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete, "data-role" => "button", "data-icon" => "delete", "data-theme" => "a" %>
+          </div>
+        </li>
+      <% end %>
+      
+      </ul>
 
-<%= link_to 'New Task', new_task_path %>
+		</div>
+		
+	  <%= render 'footer' %>
