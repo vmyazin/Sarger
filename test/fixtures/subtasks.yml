@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  text: MyText
+  type: 
+  status: MyString
+  time: 1
+  task: 
+
+two:
+  name: MyString
+  text: MyText
+  type: 
+  status: MyString
+  time: 1
+  task: 

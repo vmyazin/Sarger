@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @task.name %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @task.text %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @task.comment %>
+</p>
+
+
+<h2>Comments</h2>
+<% @task.subtasks.each do |subtask| %>
+    <p>
+      <b>Name:</b>
+      <%= subtask.name %>
+    </p>
+
+    <p>
+      <b>Text:</b>
+      <%= subtask.text %>
+    </p>
+    <b>Type:</b>
+    <%= subtask.type %>
+    </p>
+    <b>Time:</b>
+    <%= subtask.time %>
+    </p>
+    <b>Status:</b>
+    <%= subtask.status %>
+    </p>
+<% end %>
+
+<h2>Add a subtask:</h2>
+<%= form_for([@task, @task.subtasks.build]) do |f| %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :text %><br />
+      <%= f.text_area :text %>
+    </div>
+    <div class="field">
+      <%= f.label :status %><br />
+      <%= f.text_field :status %>
+    </div>
+    <div class="field">
+      <%= f.label :time %><br />
+      <%= f.text_field :time %>
+    </div>
+    <div class="field">
+      <%= f.label :type %><br />
+      <%= f.text_field :type %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
