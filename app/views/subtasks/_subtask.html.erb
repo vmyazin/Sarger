@@ -1,0 +1,22 @@
+    <p>
+      <b>Name:</b>
+      <%= subtask.name %>
+    </p>
+
+    <p>
+      <b>Text:</b>
+      <%= subtask.text %>
+    </p>
+    <b>Type:</b>
+    <%= subtask.type %>
+    </p>
+    <b>Time:</b>
+    <%= subtask.time %>
+    </p>
+    <b>Status:</b>
+    <%= subtask.status %>
+    </p>
+
+    <%= link_to 'Destroy Subtask', [subtask.task, subtask],
+                :confirm => 'Are you sure?',
+                :method => :delete %>
