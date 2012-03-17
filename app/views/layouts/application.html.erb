@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,10 +17,9 @@
   <div data-role="page">
 
   	<div data-role="header">
-      <h1>Listing tasks</h1>
+      <h1><%= yield :title %></h1>
       <a href="index.html" data-rel="back" data-icon="arrow-l" data-corners="true" data-shadow="true" data-iconshadow="true" data-inline="false" data-wrapperels="span">Back</a>
   	</div><!-- /header -->
-
 
     <%= yield %>
 

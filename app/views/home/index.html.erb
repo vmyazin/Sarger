@@ -1,20 +1,18 @@
 <% title "Your Challenges" %>
 
-<div data-role="header">
-	<h1>Sarger&trade;</h1>
-</div><!-- /header -->
 <div data-role="header" data-theme="b">
 	<h2>Challenges</h2>
 </div><!-- /header -->
 
 <div class="ui-body ui-body-c">
   
-	<ul data-role="listview" data-inset="true" data-filter="false">
-  	<li><a href="day1.html" data-ajax="true">Day 1</a></li>
-  	<li><a href="#">Day 2</a></li>
-  	<li><a href="#">Day 3</a></li>
-  	<li><a href="#">Day 4</a></li>
-  	<li><a href="#">Day 5</a></li>
+	<ul data-role="listview" data-inset="true" data-filter="false" class="space-btm space-top">
+  	<% @tasks.each do |task| %>
+      <li>
+        <%= link_to raw(task.name + ' <span>' + task.text + '</span>'), task %>
+      </li>
+    <% end %>
+  	
   </ul>
 
   <%= link_to "Edit Tasks", tasks_path, "data-role" => "button", "data-icon" => "gear", "data-theme" => "a"  %>

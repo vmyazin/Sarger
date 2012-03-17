@@ -1,6 +1,9 @@
-<h1>Editing task</h1>
+<% title "Editing task" %>
 
-<%= render 'form' %>
+<div class="ui-body ui-body-c">
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+  <%= render 'form' %>
+
+</div>
+
+<%= link_to 'Show', @task, "data-role" => "button", "data-icon" => "gear", "data-theme" => "c" %>

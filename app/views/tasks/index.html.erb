@@ -1,9 +1,8 @@
 <% title "Manage Tasks" %>
 
 		<div class="ui-body ui-body-a">
-			<h2><%= yield :title %></h2>
 
-  		<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+  		<ul data-role="listview" data-inset="true">
 
       <% @tasks.each do |task| %>
         <li>
@@ -22,13 +21,4 @@
 
 		</div>
 		
-  <div data-role="footer" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup">
-  	<div data-role="content">	
-  	  <%= link_to 'New Task', new_task_path %>
-      <%-#= <a href="#" data-role="button" data-icon="star" data-theme="e">Begin challenge</a>  %>
-    </div>
-  </div>
-
-
-
-
+	  <%= render 'footer' %>
